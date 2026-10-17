@@ -1,0 +1,16 @@
+{
+  "name": "ai-interview-project",
+  "version": "1.0.0",
+  "description": "Full-Stack AI Mock Interview Platform",
+  "scripts": {
+    "start": "concurrently \"npm run backend\" \"npm run frontend\"",
+    "dev": "concurrently \"npm run backend\" \"npm run frontend\"",
+    "backend": "npm --prefix backend start",
+    "frontend": "npm --prefix frontend run dev",
+    "server": "npm --prefix backend start",
+    "client": "npm --prefix frontend run dev"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

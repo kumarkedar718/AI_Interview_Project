@@ -1,0 +1,741 @@
+{
+  "technical": [
+    {
+      "id": "tech_1",
+      "question": "What is the Virtual DOM in React.js and how does reconciliation work?",
+      "category": "React.js",
+      "skill": "React.js",
+      "keyConcepts": ["In-Memory Tree", "Diffing Algorithm", "Batch Updating"],
+      "idealAnswer": "The Virtual DOM is a lightweight JavaScript representation of the actual browser DOM. When a component's state or props change, React creates a new Virtual DOM tree and runs its diffing algorithm to calculate minimal updates. It then efficiently batch-updates only modified real DOM nodes, avoiding costly full-page re-renders."
+    },
+    {
+      "id": "tech_2",
+      "question": "What is the difference between props and state in React?",
+      "category": "React.js",
+      "skill": "React.js",
+      "keyConcepts": ["Immutable Inputs", "Mutable Local Store", "Uni-Directional Data Flow"],
+      "idealAnswer": "Props are read-only inputs passed from a parent component to configure child components. State is an internal data store managed dynamically inside a component that triggers UI re-renders when updated. React enforces unidirectional data flow, passing props down and bubbling events up."
+    },
+    {
+      "id": "tech_3",
+      "question": "Explain the useEffect hook lifecycle and dependency array behavior in React.",
+      "category": "React.js",
+      "skill": "React.js",
+      "keyConcepts": ["Side Effects", "Dependency Tracking", "Cleanup Functions"],
+      "idealAnswer": "The useEffect hook executes side effects like data fetching, subscriptions, and DOM updates in functional components. An empty array [] runs once on initial mount, populated arrays track specific variable changes, and returning a cleanup function tears down timers or event listeners upon unmounting."
+    },
+    {
+      "id": "tech_4",
+      "question": "Why and when should you create custom hooks in React?",
+      "category": "React.js",
+      "skill": "React.js",
+      "keyConcepts": ["Reusability", "Stateful Logic Extraction", "Clean Architecture"],
+      "idealAnswer": "Custom hooks allow developers to extract and reuse stateful logic across multiple components without code duplication. They are functions prefixed with 'use' that combine built-in React hooks to encapsulate state, effects, and helper handlers into modular clean code."
+    },
+    {
+      "id": "tech_5",
+      "question": "Compare useMemo, useCallback, and React.memo in performance optimization.",
+      "category": "React.js",
+      "skill": "React.js",
+      "keyConcepts": ["Memoization", "Calculation Cache", "Referential Equality"],
+      "idealAnswer": "useMemo caches the result of expensive calculations between re-renders, while useCallback preserves function references to prevent child component re-renders. React.memo skips re-rendering a component if its props remain unchanged. Overusing them for simple functions adds unnecessary memory overhead."
+    },
+    {
+      "id": "tech_6",
+      "question": "What are React Keys and why are they necessary when rendering mapped lists?",
+      "category": "React.js",
+      "skill": "React.js",
+      "keyConcepts": ["Element Identity", "List Diffing", "UI State Bug Prevention"],
+      "idealAnswer": "Keys give list elements a stable identity, helping React determine which items have changed, been added, or removed. Using stable unique keys optimizes list diffing performance and prevents UI state bugs associated with index-based keying."
+    },
+    {
+      "id": "tech_7",
+      "question": "Explain Context API vs Redux for global state management.",
+      "category": "React.js",
+      "skill": "React.js",
+      "keyConcepts": ["Prop Drilling Prevention", "Centralized Store", "Middleware Ecosystem"],
+      "idealAnswer": "Context API is built into React to pass data deeply down component trees without prop drilling for small apps. Redux provides a centralized, predictable state container with middleware, time-travel debugging, and devtools for complex large-scale applications."
+    },
+    {
+      "id": "tech_8",
+      "question": "What is the difference between controlled and uncontrolled inputs in React forms?",
+      "category": "React.js",
+      "skill": "React.js",
+      "keyConcepts": ["State Binding", "DOM Ref Access", "Form Validation"],
+      "idealAnswer": "Controlled inputs have their values bound directly to React state via onChange handlers, giving full control over validation. Uncontrolled inputs maintain internal DOM state accessed via React refs, which can be simpler for non-validated forms."
+    },
+    {
+      "id": "tech_9",
+      "question": "How do Error Boundaries catch JavaScript errors in React component trees?",
+      "category": "React.js",
+      "skill": "React.js",
+      "keyConcepts": ["Class Component Lifecycle", "Fallback UI", "Crash Prevention"],
+      "idealAnswer": "Error Boundaries are class components that implement getDerivedStateFromError or componentDidCatch to intercept JavaScript errors in child component trees. They render a customizable fallback UI instead of crashing the entire React application."
+    },
+    {
+      "id": "tech_10",
+      "question": "What is Server-Side Rendering (SSR) vs Client-Side Rendering (CSR) in Next.js/React?",
+      "category": "React.js",
+      "skill": "React.js",
+      "keyConcepts": ["HTML Pre-Rendering", "SEO Optimization", "First Contentful Paint"],
+      "idealAnswer": "CSR loads a bare HTML shell and executes JavaScript in the browser to render UI, which can slow initial page loads. SSR pre-renders full HTML on the server for each request, delivering faster First Contentful Paint and superior SEO performance."
+    },
+    {
+      "id": "tech_11",
+      "question": "What is a Closure in JavaScript and how does lexical scoping work?",
+      "category": "JavaScript",
+      "skill": "JavaScript",
+      "keyConcepts": ["Lexical Scope", "Encapsulation", "Persistent Variables"],
+      "idealAnswer": "A closure is created when an inner function retains access to variables from its outer lexical scope even after the outer function has returned. JavaScript preserves these variables in memory as long as the inner function is referenced, enabling data encapsulation."
+    },
+    {
+      "id": "tech_12",
+      "question": "Explain the difference between let, const, and var in JavaScript.",
+      "category": "JavaScript",
+      "skill": "JavaScript",
+      "keyConcepts": ["Block Scope", "Hoisting", "Temporal Dead Zone"],
+      "idealAnswer": "var is function-scoped and hoisted with an initial value of undefined. let and const are block-scoped and hoisted into a Temporal Dead Zone, throwing a ReferenceError if accessed before declaration. const also prevents variable reassignment."
+    },
+    {
+      "id": "tech_13",
+      "question": "How does the JavaScript Event Loop handle Call Stack, Microtasks, and Macrotasks?",
+      "category": "JavaScript",
+      "skill": "JavaScript",
+      "keyConcepts": ["Call Stack", "Promise Microtasks", "Timer Macrotasks"],
+      "idealAnswer": "Synchronous code executes on the main Call Stack. Async Promise callbacks enter the Microtask Queue while setTimeout callbacks enter the Macrotask Queue. The Event Loop processes all Microtasks completely before picking a Macrotask."
+    },
+    {
+      "id": "tech_14",
+      "question": "What is the difference between double equals (==) and triple equals (===)?",
+      "category": "JavaScript",
+      "skill": "JavaScript",
+      "keyConcepts": ["Type Coercion", "Strict Equality", "Type Safety"],
+      "idealAnswer": "Double equals (==) performs implicit type coercion before comparing values, converting them to a common type. Triple equals (===) performs strict comparison, checking both value and data type without any type conversion."
+    },
+    {
+      "id": "tech_15",
+      "question": "Explain Call, Apply, and Bind methods for explicit 'this' binding in JavaScript.",
+      "category": "JavaScript",
+      "skill": "JavaScript",
+      "keyConcepts": ["Explicit Binding", "Argument Passing", "Function Partial Application"],
+      "idealAnswer": "Call and Apply execute a function immediately with a custom 'this' context, accepting arguments individually or as an array respectively. Bind returns a new function with 'this' permanently bound for future execution."
+    },
+    {
+      "id": "tech_16",
+      "question": "What is Hoisting in JavaScript and how does it affect functions vs variables?",
+      "category": "JavaScript",
+      "skill": "JavaScript",
+      "keyConcepts": ["Compilation Phase", "Function Hoisting", "TDZ"],
+      "idealAnswer": "Hoisting moves function and variable declarations to the top of their scope during compilation. Function declarations are fully hoisted with bodies attached, while var variables are hoisted with undefined and let/const remain uninitialized in TDZ."
+    },
+    {
+      "id": "tech_17",
+      "question": "What are Promises in JavaScript and how do they resolve callback hell?",
+      "category": "JavaScript",
+      "skill": "JavaScript",
+      "keyConcepts": ["Async States", "Chaining .then()", "Error Handling"],
+      "idealAnswer": "Promises represent the eventual completion or failure of asynchronous operations with Pending, Fulfilled, or Rejected states. They replace deeply nested callbacks with flat, readable .then() and .catch() chains or async/await syntax."
+    },
+    {
+      "id": "tech_18",
+      "question": "Explain Prototypal Inheritance and Prototype Chain in JavaScript.",
+      "category": "JavaScript",
+      "skill": "JavaScript",
+      "keyConcepts": ["__proto__", "Object.create", "Property Lookup"],
+      "idealAnswer": "JavaScript objects inherit properties and methods directly from prototype objects via the Prototype Chain. When accessing a property, JavaScript searches the object itself, then traverses up its prototype chain until found or reaching null."
+    },
+    {
+      "id": "tech_19",
+      "question": "What is Event Delegation in DOM manipulation and why is it efficient?",
+      "category": "JavaScript",
+      "skill": "JavaScript",
+      "keyConcepts": ["Event Bubbling", "Single Listener", "Dynamic Elements"],
+      "idealAnswer": "Event Delegation attaches a single event listener to a parent container instead of individual child elements, leveraging Event Bubbling. It dramatically reduces memory usage and automatically handles dynamically added child elements."
+    },
+    {
+      "id": "tech_20",
+      "question": "What are Arrow Functions and how do they handle lexical 'this' binding?",
+      "category": "JavaScript",
+      "skill": "JavaScript",
+      "keyConcepts": ["Concise Syntax", "Lexical This", "No Arguments Object"],
+      "idealAnswer": "Arrow functions provide a concise syntax for function expressions and do not create their own 'this', 'arguments', or 'super' bindings. Instead, they lexically inherit 'this' from their surrounding parent scope at definition time."
+    },
+    {
+      "id": "tech_21",
+      "question": "What is Node.js and why is it asynchronous and non-blocking?",
+      "category": "Node.js",
+      "skill": "Node.js",
+      "keyConcepts": ["V8 Engine", "Libuv Thread Pool", "Event Loop"],
+      "idealAnswer": "Node.js is an open-source server-side JavaScript runtime built on V8. It operates on a single-threaded event loop that offloads I/O operations to libuv background worker threads, allowing thousands of concurrent client connections with minimal overhead."
+    },
+    {
+      "id": "tech_22",
+      "question": "What are Node.js Streams and how do they optimize RAM usage?",
+      "category": "Node.js",
+      "skill": "Node.js",
+      "keyConcepts": ["Chunked Processing", "RAM Efficiency", "Pipe Backpressure"],
+      "idealAnswer": "Streams process data sequentially in small continuous chunks rather than reading entire files into RAM at once. This significantly lowers memory usage when transmitting large video files, database queries, or server logs."
+    },
+    {
+      "id": "tech_23",
+      "question": "Explain process.nextTick() vs setImmediate() in Node.js event loop.",
+      "category": "Node.js",
+      "skill": "Node.js",
+      "keyConcepts": ["Tick Queue", "Check Phase", "Loop Iteration"],
+      "idealAnswer": "process.nextTick() executes immediately after the current operation finishes before the event loop continues. setImmediate() schedules execution for the Check phase of the upcoming event loop iteration."
+    },
+    {
+      "id": "tech_24",
+      "question": "How do Node.js Worker Threads differ from Cluster module?",
+      "category": "Node.js",
+      "skill": "Node.js",
+      "keyConcepts": ["Shared Memory", "Multi-Process Load Balancing", "CPU Bound Work"],
+      "idealAnswer": "The Cluster module spawns multiple separate Node.js process instances sharing the same server port to utilize multi-core CPUs. Worker Threads run multiple JavaScript execution threads inside a single process, sharing memory for heavy CPU calculations."
+    },
+    {
+      "id": "tech_25",
+      "question": "What is Backpressure in Node.js Streams and how is it managed?",
+      "category": "Node.js",
+      "skill": "Node.js",
+      "keyConcepts": ["Buffer Overflow Prevention", "Stream Pipe", "Pause & Resume"],
+      "idealAnswer": "Backpressure occurs when a Writable stream receives data faster than it can process, filling memory buffers. Node.js manages backpressure automatically via stream.pipe(), pausing reading until the destination buffer drains."
+    },
+    {
+      "id": "tech_26",
+      "question": "What is middleware in Express.js and how does next() work?",
+      "category": "Express",
+      "skill": "Express",
+      "keyConcepts": ["Request Response Cycle", "Chain Execution", "Error Handling"],
+      "idealAnswer": "Express middleware functions access the request, response, and next middleware function in the stack. They execute custom logic, validate headers, parse bodies, or terminate response cycles. Calling next() passes execution to the next middleware."
+    },
+    {
+      "id": "tech_27",
+      "question": "How do you implement centralized error handling in Express.js?",
+      "category": "Express",
+      "skill": "Express",
+      "keyConcepts": ["Four-Argument Middleware", "Global Exception Handler", "JSON Error Response"],
+      "idealAnswer": "Centralized error handling uses error middleware defined with four arguments (err, req, res, next). It intercepts uncaught route errors, logs stack trace details, and sends standardized JSON error responses to clients."
+    },
+    {
+      "id": "tech_28",
+      "question": "Explain JWT (JSON Web Token) authentication flow in Express.js APIs.",
+      "category": "Express",
+      "skill": "Express",
+      "keyConcepts": ["Stateless Auth", "Signed Payload", "Authorization Header"],
+      "idealAnswer": "Clients send login credentials to the server, which validates them and signs a JWT containing user claims. The client stores the token and sends it in the Authorization Bearer header for protected route middleware verification."
+    },
+    {
+      "id": "tech_29",
+      "question": "What is CORS (Cross-Origin Resource Sharing) and how do you configure it in Express?",
+      "category": "Express",
+      "skill": "Express",
+      "keyConcepts": ["Browser Security Policy", "Access-Control-Allow-Origin", "Preflight Request"],
+      "idealAnswer": "CORS is a browser security mechanism that restricts web pages from making API requests to a different domain. Express uses the cors() middleware to set Access-Control-Allow-Origin headers, permitting trusted client origins."
+    },
+    {
+      "id": "tech_30",
+      "question": "What is Rate Limiting and how do you protect Express APIs against DDoS?",
+      "category": "Express",
+      "skill": "Express",
+      "keyConcepts": ["express-rate-limit", "IP Throttling", "HTTP 429 Too Many Requests"],
+      "idealAnswer": "Rate limiting restricts the number of API requests an IP address can make within a specified time window. Using express-rate-limit middleware prevents abuse, brute-force attacks, and DDoS server overload by returning HTTP 429."
+    },
+    {
+      "id": "tech_31",
+      "question": "What is the difference between WHERE and HAVING clauses in SQL?",
+      "category": "SQL",
+      "skill": "SQL",
+      "keyConcepts": ["Row Pre-Filtering", "Group Aggregation Filtering", "GROUP BY"],
+      "idealAnswer": "The WHERE clause filters individual table rows before any grouping takes place. The HAVING clause filters aggregate group results generated by the GROUP BY clause. WHERE cannot evaluate aggregate functions like SUM() or COUNT()."
+    },
+    {
+      "id": "tech_32",
+      "question": "Explain ACID properties in Relational Database Management Systems.",
+      "category": "SQL",
+      "skill": "SQL",
+      "keyConcepts": ["Atomicity", "Consistency", "Isolation", "Durability"],
+      "idealAnswer": "ACID guarantees Atomicity (all-or-nothing transactions), Consistency (database rules preserved), Isolation (concurrent transactions execute independently), and Durability (committed data persists permanently despite crashes)."
+    },
+    {
+      "id": "tech_33",
+      "question": "What are SQL Joins? Compare INNER JOIN, LEFT JOIN, and RIGHT JOIN.",
+      "category": "SQL",
+      "skill": "SQL",
+      "keyConcepts": ["Relational Queries", "Matching Keys", "Null Rows"],
+      "idealAnswer": "SQL Joins combine records from multiple tables based on related columns. INNER JOIN returns only matching rows in both tables. LEFT JOIN returns all rows from the left table plus matched right rows, filling un-matched values with NULL."
+    },
+    {
+      "id": "tech_34",
+      "question": "What is Database Indexing in SQL and how does it improve query performance?",
+      "category": "SQL",
+      "skill": "SQL",
+      "keyConcepts": ["B-Tree Index", "O(log N) Lookup", "Write Overhead"],
+      "idealAnswer": "Indexes create data structures (like B-Trees) that allow databases to find rows in logarithmic time O(log N) without scanning the whole table. Reads become fast, but writes/inserts incur slight overhead to update index structures."
+    },
+    {
+      "id": "tech_35",
+      "question": "What is Database Normalization (1NF, 2NF, 3NF) and why is it used?",
+      "category": "SQL",
+      "skill": "SQL",
+      "keyConcepts": ["Redundancy Elimination", "Functional Dependencies", "Data Integrity"],
+      "idealAnswer": "Normalization organizes columns and tables to minimize duplicate data and prevent insertion/update anomalies. 1NF ensures atomic values, 2NF removes partial key dependencies, and 3NF eliminates transitive non-key dependencies."
+    },
+    {
+      "id": "tech_36",
+      "question": "What is MongoDB and how do BSON collections store data?",
+      "category": "MongoDB",
+      "skill": "MongoDB",
+      "keyConcepts": ["NoSQL Document Store", "BSON Format", "Dynamic Schema"],
+      "idealAnswer": "MongoDB is a NoSQL database that stores data in flexible, JSON-like BSON documents grouped inside collections. Unlike relational tables, documents do not require fixed schemas, enabling dynamic fields and rapid schema iteration."
+    },
+    {
+      "id": "tech_37",
+      "question": "What is an Aggregation Pipeline in MongoDB ($match, $group, $project)?",
+      "category": "MongoDB",
+      "skill": "MongoDB",
+      "keyConcepts": ["Multi-Stage Pipeline", "Server-Side Calculation", "Native Data Reshaping"],
+      "idealAnswer": "An Aggregation Pipeline processes documents through multi-stage operators ($match, $group, $project, $lookup) to filter, group, reshape, and calculate aggregate metrics natively inside the database server."
+    },
+    {
+      "id": "tech_38",
+      "question": "Compare Embedded Documents vs Reference Links in MongoDB schema design.",
+      "category": "MongoDB",
+      "skill": "MongoDB",
+      "keyConcepts": ["1-to-Few Embedding", "1-to-Many Referencing", "Normalized Data"],
+      "idealAnswer": "Embedded documents store related data within a single document, yielding fast single-query reads for 1-to-Few relationships. Referencing stores document IDs and uses $lookup joins, ideal for 1-to-Many or frequently updated shared data."
+    },
+    {
+      "id": "tech_39",
+      "question": "What is Sharding in MongoDB and how does it achieve horizontal scaling?",
+      "category": "MongoDB",
+      "skill": "MongoDB",
+      "keyConcepts": ["Shard Key", "Horizontal Partitioning", "Distributed Data"],
+      "idealAnswer": "Sharding distributes large datasets across multiple independent server nodes using a Shard Key. It achieves horizontal scaling, allowing MongoDB to handle massive data storage and query throughput beyond single server limits."
+    },
+    {
+      "id": "tech_40",
+      "question": "Explain MongoDB Indexing types (Single Field, Compound, Text Index).",
+      "category": "MongoDB",
+      "skill": "MongoDB",
+      "keyConcepts": ["Compound Index", "ESR Rule", "Text Search"],
+      "idealAnswer": "MongoDB indexes improve query execution speed by storing sorted field values. Single Field indexes sort one key, Compound indexes sort multiple fields following the Equality-Sort-Range rule, and Text indexes support full-text search."
+    },
+    {
+      "id": "tech_41",
+      "question": "What is Microservices Architecture vs Monolithic Architecture?",
+      "category": "System Architecture",
+      "skill": "Architecture",
+      "keyConcepts": ["Decoupled Services", "Independent Deployment", "Network Latency Trade-off"],
+      "idealAnswer": "Monoliths package all application logic inside a single codebase and deployment unit. Microservices decouple applications into independent, self-contained services communicating over APIs, enabling independent scaling and technology diversity."
+    },
+    {
+      "id": "tech_42",
+      "question": "What is a Load Balancer (Nginx/HAProxy) and how does Layer 7 routing work?",
+      "category": "System Architecture",
+      "skill": "Architecture",
+      "keyConcepts": ["Traffic Distribution", "Round Robin", "Layer 7 HTTP Routing"],
+      "idealAnswer": "Load balancers distribute incoming network traffic across multiple backend servers using algorithms like Round Robin or Least Connections. Layer 7 load balancers inspect HTTP headers and URLs to route requests intelligently."
+    },
+    {
+      "id": "tech_43",
+      "question": "What is Redis Caching and how does it reduce database load?",
+      "category": "System Architecture",
+      "skill": "Architecture",
+      "keyConcepts": ["In-Memory Data Store", "TTL Expiration", "Cache Aside Pattern"],
+      "idealAnswer": "Redis is an in-memory key-value data store that caches frequent query results with sub-millisecond latency. Using the Cache-Aside pattern, applications check Redis first, fetching from DB only on cache misses to protect database servers."
+    },
+    {
+      "id": "tech_44",
+      "question": "What is Docker Containerization and how does it differ from Virtual Machines?",
+      "category": "DevOps & Cloud",
+      "skill": "Architecture",
+      "keyConcepts": ["OS-Level Virtualization", "Lightweight Images", "Shared OS Kernel"],
+      "idealAnswer": "Docker packages applications and dependencies into lightweight containers that share the host OS kernel. Virtual Machines hypervise full guest operating systems, making Docker containers significantly faster to boot and less resource intensive."
+    },
+    {
+      "id": "tech_45",
+      "question": "What is CI/CD Pipeline (Continuous Integration / Continuous Deployment)?",
+      "category": "DevOps & Cloud",
+      "skill": "Architecture",
+      "keyConcepts": ["Automated Build", "Automated Testing", "Zero Downtime Release"],
+      "idealAnswer": "CI/CD automates code building, testing, and production deployment upon every git commit. Continuous Integration catches bugs early through automated test suites, while Continuous Deployment ensures reliable zero-downtime releases."
+    },
+    {
+      "id": "tech_46",
+      "question": "What is WebSockets vs REST HTTP Polling for real-time communication?",
+      "category": "System Architecture",
+      "skill": "Architecture",
+      "keyConcepts": ["Full-Duplex TCP Connection", "Low Overhead", "Real-Time Push"],
+      "idealAnswer": "REST HTTP polling requires clients to repeatedly request updates from servers, creating network overhead. WebSockets establish a single persistent, full-duplex TCP connection, allowing instant bi-directional data streaming."
+    },
+    {
+      "id": "tech_47",
+      "question": "What is API Rate Limiting and Token Bucket Algorithm?",
+      "category": "System Architecture",
+      "skill": "Architecture",
+      "keyConcepts": ["Token Refill Rate", "Burst Protection", "API Throttling"],
+      "idealAnswer": "The Token Bucket algorithm refills tokens into a bucket at a constant rate. Each API request consumes a token; if the bucket is empty, requests are rejected with HTTP 429. This handles traffic bursts while enforcing strict rate limits."
+    },
+    {
+      "id": "tech_48",
+      "question": "What is Database Replication vs Sharding?",
+      "category": "System Architecture",
+      "skill": "Architecture",
+      "keyConcepts": ["Primary-Replica Read Scaling", "Horizontal Shard Partitioning"],
+      "idealAnswer": "Replication copies data across primary and replica nodes to provide high availability and read scaling. Sharding partitions data horizontally across independent database clusters to scale write storage capacity."
+    },
+    {
+      "id": "tech_49",
+      "question": "Explain HTTPS, SSL/TLS Handshake, and Symmetric vs Asymmetric Encryption.",
+      "category": "Security",
+      "skill": "Security",
+      "keyConcepts": ["Asymmetric Handshake", "Symmetric Session Key", "Certificate Authority"],
+      "idealAnswer": "HTTPS encrypts HTTP traffic using TLS. During the handshake, asymmetric public key cryptography verifies server certificates and securely negotiates a shared symmetric key, which encrypts all subsequent session data with high performance."
+    },
+    {
+      "id": "tech_50",
+      "question": "What is SQL Injection (SQLi) and Cross-Site Scripting (XSS)? How do you prevent them?",
+      "category": "Security",
+      "skill": "Security",
+      "keyConcepts": ["Parameterized Queries", "Input Sanitization", "Content Security Policy"],
+      "idealAnswer": "SQLi occurs when malicious SQL code is injected into database queries; it is prevented using parameterized queries. XSS occurs when untrusted scripts execute in user browsers; it is prevented via HTML entity escaping and strict Content Security Policies."
+    }
+  ],
+  "hr": [
+    { "id": "hr_1", "question": "Tell me about yourself and your technical background.", "category": "Behavioral", "starTips": "Structure: Current Role/Studies -> Key Technical Strengths -> Why this job fits your goals.", "idealAnswer": "I am a dedicated software engineer with a strong foundation in full-stack web development, database architecture, and REST API design. Throughout my academic and project work, I have focused on building clean, user-centric applications using React and Node.js. My goal is to apply my technical problem-solving skills to deliver high-impact software solutions." },
+    { "id": "hr_2", "question": "Why do you want to work for our company?", "category": "Company Fit", "starTips": "Research the company's products, engineering culture, and recent innovations.", "idealAnswer": "I admire your company's focus on scalable cloud solutions and engineering excellence. Your recent product innovations align perfectly with my technical skills in web architecture and API development. I want to contribute to an agile team where continuous learning and high-quality software are top priorities." },
+    { "id": "hr_3", "question": "Where do you see yourself in 3 to 5 years?", "category": "Career Goals", "starTips": "Show ambition for technical mastery, leadership growth, and long-term value creation.", "idealAnswer": "In 3 to 5 years, I envision myself as a Senior Full-Stack Engineer driving key technical decisions and system architecture. I want to deepen my expertise in cloud deployment and performance optimization while mentoring junior developers. Ultimately, I aim to take end-to-end ownership of critical product features." },
+    { "id": "hr_4", "question": "What are your greatest technical strengths and weakness?", "category": "Self-Awareness", "starTips": "State a genuine technical strength with examples, and a weakness with proactive steps to improve.", "idealAnswer": "My strength is quick technology adaptation and systematic debugging under pressure. My weakness was spending excessive time perfecting initial code structure, but I have learned to timebox tasks using agile sprints to maintain fast velocity without sacrificing quality." },
+    { "id": "hr_5", "question": "Describe a difficult technical challenge you faced and how you solved it.", "category": "Problem Solving", "starTips": "Use STAR method: Situation, Task, Action, Result.", "idealAnswer": "During a project milestone, our API response time degraded significantly under concurrent load. I analyzed server memory snapshots, identified an unindexed database query, and refactored the data layer with proper indexing and connection pooling. This reduced latency by over 60% and restored smooth application performance." },
+    { "id": "hr_6", "question": "How do you handle disagreement with a team member or lead?", "category": "Conflict Resolution", "starTips": "Focus on active listening, empirical data, and respectful professional consensus.", "idealAnswer": "I address technical disagreements by scheduling a quick sync to listen to their perspective and review underlying requirements. I present clear benchmark data or prototype trade-offs objectively rather than relying on personal preference. This collaborative approach ensures we choose the best architectural solution for the project." },
+    { "id": "hr_7", "question": "Describe a time when you had to work under a tight deadline.", "category": "Time Management", "starTips": "Explain prioritization, scope management, and clear stakeholder communication.", "idealAnswer": "When faced with an unexpected 48-hour client release deadline, I broke down the core requirements into MVP user stories and eliminated non-essential scope. I communicated milestones proactively with team members and utilized automated testing to ensure zero regression bugs. We successfully delivered the production release on time." },
+    { "id": "hr_8", "question": "Why should we hire you over other candidates?", "category": "Value Proposition", "starTips": "Combine technical competence, strong work ethic, and quick organizational value addition.", "idealAnswer": "You should hire me because I combine strong technical skills in full-stack development with a proactive problem-solving mindset. I do not just write code; I focus on software quality, automated testing, and business impact. My ability to quickly learn new tools means I will be productive from day one." },
+    { "id": "hr_9", "question": "How do you handle constructive criticism or feedback from seniors?", "category": "Growth Mindset", "starTips": "Show humility, gratitude for learning opportunities, and concrete action taken.", "idealAnswer": "I welcome constructive feedback as an essential opportunity for professional growth. When receiving code review suggestions, I take detailed notes, clarify rationale when necessary, and immediately apply the improved patterns in subsequent code reviews. This process has continuously improved my coding standard." },
+    { "id": "hr_10", "question": "Describe a situation where a project failed or missed an objective.", "category": "Accountability", "starTips": "Take full responsibility, highlight root cause analysis, and share key lessons learned.", "idealAnswer": "In an earlier team sprint, we missed a milestone due to underestimated third-party API integration complexities. I took ownership of the delay, conducted a post-mortem with the team, and implemented technical spikes for external dependencies in future planning. This preventative measure eliminated future integration delays." },
+    { "id": "hr_11", "question": "How do you keep your technical skills up to date with new technologies?", "category": "Continuous Learning", "starTips": "Mention tech blogs, open-source projects, online courses, and personal side projects.", "idealAnswer": "I dedicate time weekly to reading official documentation, following tech blogs, and building experimental side projects with emerging frameworks. I also participate in developer communities and open-source discussions to understand industry best practices. This keeps my technical toolkit modern and efficient." },
+    { "id": "hr_12", "question": "Are you comfortable working in a remote or hybrid team environment?", "category": "Adaptability", "starTips": "Highlight proactive communication, async documentation, and time management.", "idealAnswer": "Yes, I am highly comfortable in both remote and hybrid setups. I maintain clear asynchronous communication through daily standups, thorough pull request documentation, and prompt messaging updates. This ensures team alignment and high productivity regardless of location." },
+    { "id": "hr_13", "question": "How do you prioritize multiple urgent tasks on a busy day?", "category": "Time Management", "starTips": "Explain Eisenhower matrix, project impact, and communicating blockers early.", "idealAnswer": "I prioritize tasks based on project urgency and technical impact, using a structured todo board to track status. I focus on critical path blockers first to unblock teammates before tackling secondary tasks. If competing deadlines arise, I sync with my lead immediately to realign priorities." },
+    { "id": "hr_14", "question": "Tell me about a time you took initiative without being asked.", "category": "Leadership & Initiative", "starTips": "Describe noticing an inefficiency and proactively fixing it for the team.", "idealAnswer": "I noticed our local development setup required several manual setup steps that wasted onboarding time for new joiners. I wrote an automated setup script and updated the project README documentation. This reduced environment setup time from hours to just ten minutes for the entire team." },
+    { "id": "hr_15", "question": "What motivates you to perform your best work every day?", "category": "Motivation", "starTips": "Link personal motivation to solving real user problems and mastering engineering skills.", "idealAnswer": "I am motivated by solving complex real-world problems and seeing the tangible impact of my code on end users. Building clean, scalable software and collaborating with smart teammates inspires me to continuously refine my technical craft. Knowing my work improves user experience drives my daily passion." },
+    { "id": "hr_16", "question": "How do you handle stress or high-pressure situations during outages?", "category": "Resilience", "starTips": "Emphasize calm demeanor, systematic troubleshooting, and blameless communication.", "idealAnswer": "During high-pressure incidents, I remain calm and focus strictly on systematic troubleshooting step-by-step. I isolate error logs, inspect recent deployment commits, and coordinate rollback or hotfix procedures with team leads. Maintaining clear communication prevents panic and leads to rapid resolution." },
+    { "id": "hr_17", "question": "What is your definition of success in a software engineering role?", "category": "Professional Values", "starTips": "Balance technical excellence, reliable code delivery, and team collaboration.", "idealAnswer": "Success means delivering reliable, maintainable code that directly achieves business goals and delights users. It also involves collaborating effectively, sharing technical knowledge, and fostering a positive team culture. Continuous personal and team growth is my ultimate metric of success." },
+    { "id": "hr_18", "question": "Have you ever mentored a peer or junior teammate? How did you approach it?", "category": "Mentorship", "starTips": "Highlight patience, pair programming, active listening, and empowering others.", "idealAnswer": "Yes, I regularly assist peers through pair programming sessions and code review walkthroughs. I encourage them to break down problems independently while guiding them toward clean design patterns and official documentation. Seeing junior teammates gain confidence and deliver features independently is deeply rewarding." },
+    { "id": "hr_19", "question": "What environment do you work best in?", "category": "Culture Fit", "starTips": "Describe collaborative, transparent, quality-focused, and agile environments.", "idealAnswer": "I thrive in an agile, transparent environment that values code quality, continuous integration, and open technical discussions. I appreciate team cultures where feedback is constructive and initiative is encouraged. A supportive environment inspires high performance and innovation." },
+    { "id": "hr_20", "question": "What are your salary expectations for this position?", "category": "Negotiation", "starTips": "Research market standards, focus on mutual value, and express flexibility.", "idealAnswer": "Based on my research for full-stack engineering roles with my skill set in this market, I expect a competitive salary between industry standards. However, I am open to discussing the total compensation package including learning opportunities, performance bonuses, and career growth prospects." },
+    { "id": "hr_21", "question": "Tell me about a time you had to learn a new framework very quickly.", "category": "Adaptability", "starTips": "Explain fast learning strategy: documentation, quick prototypes, and code practice.", "idealAnswer": "When a project required adopting TypeScript within a week, I studied the official documentation and built a prototype CRUD service. I focused on core typing patterns, generics, and compiler configurations before refactoring production components. We successfully integrated TypeScript without delaying sprint deadlines." },
+    { "id": "hr_22", "question": "How do you ensure your code quality before submitting a pull request?", "category": "Code Quality", "starTips": "Mention unit tests, static analysis, self code review, and performance checks.", "idealAnswer": "I conduct a thorough self code review, verifying syntax consistency, edge case coverage, and adherence to project linting rules. I write automated unit tests to achieve high test coverage and run local regression builds. This ensures my pull requests are clean and easy for peers to review." },
+    { "id": "hr_23", "question": "What would your previous manager or teammate say about working with you?", "category": "Peer Feedback", "starTips": "Mention reliability, strong communication, technical competence, and teamwork.", "idealAnswer": "My previous leads would describe me as a reliable, detail-oriented engineer who takes full ownership of assigned tasks. They would highlight my proactive communication, willingness to help teammates, and ability to deliver clean code consistently under tight deadlines." },
+    { "id": "hr_24", "question": "How do you balance speed of delivery with technical debt?", "category": "Software Architecture", "starTips": "Discuss pragmatic trade-offs, refactoring sprints, and documentation.", "idealAnswer": "I deliver MVPs fast when business urgency requires it, but I document technical shortcuts clearly as technical debt backlog items. I work with product managers to schedule refactoring time in upcoming sprints to prevent debt accumulation. This balances fast delivery with long-term codebase health." },
+    { "id": "hr_25", "question": "Do you have any questions for us about the company or team?", "category": "Interview Closing", "starTips": "Ask intelligent questions about engineering challenges, tech stack, or team vision.", "idealAnswer": "Yes! What are the biggest technical roadmap challenges your engineering team is facing this quarter? Additionally, how does the team support continuous learning and architectural mentorship for engineers?" },
+    { "id": "hr_26", "question": "Describe a scenario where you had to adapt to a major change in requirements.", "category": "Flexibility", "starTips": "Highlight positive attitude, agile backlog refactoring, and clear communication.", "idealAnswer": "Mid-way through a feature build, client requirements shifted toward real-time WebSocket notifications instead of REST polling. I re-assessed our component architecture, updated API data schemas, and communicated timeline adjustments to stakeholders. We pivoted cleanly without dropping existing progress." },
+    { "id": "hr_27", "question": "How do you manage distraction and stay focused during long coding sessions?", "category": "Productivity", "starTips": "Mention Pomodoro technique, blocking notifications, and clear daily task goals.", "idealAnswer": "I set clear daily sub-goals and use deep-work timeblocks, turning off non-essential notifications during intense coding sessions. Taking brief structured breaks keeps my mental clarity sharp. This approach ensures consistent output throughout the day." },
+    { "id": "hr_28", "question": "What steps do you take when you are stuck on a technical bug for hours?", "category": "Problem Solving", "starTips": "Describe rubber-ducking, systematic isolation, reading docs, and asking peers.", "idealAnswer": "When stuck, I first step back and write out the expected vs actual execution flow. I isolate the buggy module in a sandbox environment and review server logs. If the blocker persists after systematic debugging, I consult official docs or ask a teammate for a quick second pair of eyes." },
+    { "id": "hr_29", "question": "How do you handle working with a difficult or non-responsive team member?", "category": "Collaboration", "starTips": "Focus on empathy, clear direct communication, and unblocking shared dependencies.", "idealAnswer": "I reach out directly via a friendly one-on-one call to check if they face any blockers or heavy workload. I clarify shared project milestones and offer assistance where possible. Keeping communication open and supportive usually restores smooth collaboration." },
+    { "id": "hr_30", "question": "What is your long-term vision for your career in technology?", "category": "Career Vision", "starTips": "Align personal growth with technical mastery and positive organizational impact.", "idealAnswer": "My vision is to master scalable software architecture and eventually transition into a Principal Engineer or Technical Lead role. I want to build robust platforms that solve real-world problems while fostering engineering talent within tech organizations." }
+  ],
+  "gd": [
+    {
+      "id": "gd_1",
+      "topic": "Artificial Intelligence & Automation: Job Creator or Job Destroyer?",
+      "category": "Technology & Economy",
+      "forPoints": [
+        "Automates repetitive tasks, freeing human talent for high-level creative and strategic engineering.",
+        "Spurs creation of new industries like MLOps, AI engineering, cybersecurity, and data analytics.",
+        "Increases software developer productivity by up to 40% globally."
+      ],
+      "againstPoints": [
+        "Causes short-term displacement of entry-level manual data and operational jobs.",
+        "High cost of AI infrastructure creates economic disparity between big tech and small startups.",
+        "Ethical concerns regarding data privacy, bias, and algorithmic accountability."
+      ],
+      "openingStrategy": "Start by defining AI as a tool of evolution rather than pure destruction, highlighting historical precedents like the Industrial Revolution.",
+      "conclusionStrategy": "Conclude that proactive upskilling, continuous education, and ethical AI regulation will turn AI into a net positive job creator."
+    },
+    {
+      "id": "gd_2",
+      "topic": "Remote Work vs Work From Office vs Hybrid Model: Future of IT Industry?",
+      "category": "Work Culture",
+      "forPoints": [
+        "Remote work expands global talent access and eliminates commuting stress for employees.",
+        "Hybrid model balances face-to-face team collaboration with flexible deep-work home days.",
+        "Significantly reduces commercial real estate costs for companies."
+      ],
+      "againstPoints": [
+        "Pure remote can reduce spontaneous team bonding, informal mentorship, and onboarding ease.",
+        "Work-life boundaries blur, increasing employee burnout risk if unmanaged."
+      ],
+      "openingStrategy": "Acknowledge that productivity metrics favor flexibility while innovation and culture thrive on strategic alignment.",
+      "conclusionStrategy": "Advocate for structured hybrid models tailored to specific project requirements."
+    },
+    {
+      "id": "gd_3",
+      "topic": "Cashless Economy & Digital Payments: Benefits vs Cybersecurity Risks",
+      "category": "Economy & Tech",
+      "forPoints": [
+        "Boosts financial transparency, reduces black money transactions, and speeds up commerce.",
+        "UPI and digital wallets enable instant micro-transactions for small vendors.",
+        "Drives financial inclusion across rural and semi-urban populations."
+      ],
+      "againstPoints": [
+        "Vulnerability to phishing scams, cyber fraud, and server downtime issues.",
+        "Excludes demographics without smartphone access or digital literacy."
+      ],
+      "openingStrategy": "Highlight that digital payments have transformed economic speed while making cybersecurity a national priority.",
+      "conclusionStrategy": "Summarize that multi-factor authentication, digital literacy campaigns, and strict banking security make digital payments indispensable."
+    },
+    {
+      "id": "gd_4",
+      "topic": "Social Media: Platform for Free Expression or Threat to Mental Health?",
+      "category": "Society & Tech",
+      "forPoints": [
+        "Democratizes information sharing, enables global networking, and builds communities.",
+        "Empowers small businesses and creators to market products without middleman costs."
+      ],
+      "againstPoints": [
+        "Algorithmic dopamine loops cause digital addiction, anxiety, and cyberbullying.",
+        "Rapid spread of fake news and unverified misinformation."
+      ],
+      "openingStrategy": "Position social media as a powerful communication tool whose net impact depends entirely on user awareness and platform moderation.",
+      "conclusionStrategy": "Recommend digital wellness habits paired with algorithmic transparency and strict anti-misinformation policies."
+    },
+    {
+      "id": "gd_5",
+      "topic": "Electric Vehicles (EVs): Are We Ready for Full EV Transition?",
+      "category": "Environment & Industry",
+      "forPoints": [
+        "Dramatically cuts carbon emissions and urban air pollution.",
+        "Reduces long-term fuel import bills and operational maintenance costs."
+      ],
+      "againstPoints": [
+        "Inadequate charging station infrastructure across highways.",
+        "Environmental concerns surrounding lithium battery mining and disposal."
+      ],
+      "openingStrategy": "Initiate by highlighting global climate commitments and the rapid shift toward green automotive technology.",
+      "conclusionStrategy": "Conclude that government subsidies and battery recycling infrastructure will make EV transition viable over the next decade."
+    },
+    {
+      "id": "gd_6",
+      "topic": "EdTech & Online Learning vs Traditional Classroom Education",
+      "category": "Education",
+      "forPoints": [
+        "Provides affordable, flexible, and high-quality education to remote students globally.",
+        "Enables self-paced learning with interactive video tutorials and AI tutors."
+      ],
+      "againstPoints": [
+        "Lacks in-person social peer interaction, sports, and holistic personality development.",
+        "Digital divide leaves underprivileged students behind due to device costs."
+      ],
+      "openingStrategy": "Frame online education as a powerful multiplier that complements traditional institutions rather than replacing them completely.",
+      "conclusionStrategy": "Advocate for blended learning models combining digital access with classroom collaboration."
+    },
+    {
+      "id": "gd_7",
+      "topic": "Cryptocurrency & Blockchain: Revolutionizing Finance or Speculative Bubble?",
+      "category": "Finance & Tech",
+      "forPoints": [
+        "Decentralized ledger technology enables fast, tamper-proof cross-border payments.",
+        "Smart contracts eliminate expensive financial intermediaries."
+      ],
+      "againstPoints": [
+        "Extreme price volatility risks retail investor savings.",
+        "High energy consumption for proof-of-work mining."
+      ],
+      "openingStrategy": "Distinguish between blockchain technology's genuine utility and the speculative nature of volatile cryptocurrencies.",
+      "conclusionStrategy": "Suggest central bank digital currencies (CBDCs) and regulated blockchain applications as the ideal path forward."
+    },
+    {
+      "id": "gd_8",
+      "topic": "Data Privacy in Digital Era: Individual Right vs Corporate Monetization",
+      "category": "Ethics & Law",
+      "forPoints": [
+        "Data collection allows companies to personalize user experiences and offer free services."
+      ],
+      "againstPoints": [
+        "Unauthorized data tracking violates fundamental right to privacy.",
+        "Data breaches leak sensitive personal and financial information."
+      ],
+      "openingStrategy": "State that data has become the oil of the digital economy, making user privacy laws critical.",
+      "conclusionStrategy": "Recommend strict enforcement of legislation like GDPR and Data Protection Acts globally."
+    },
+    {
+      "id": "gd_9",
+      "topic": "Universal Basic Income (UBI): Solution to Poverty or Disincentive to Work?",
+      "category": "Economy & Social",
+      "forPoints": [
+        "Guarantees basic human dignity, food security, and financial safety net.",
+        "Reduces administrative overhead of multiple fragmented welfare schemes."
+      ],
+      "againstPoints": [
+        "Enormous fiscal burden on government tax revenues.",
+        "Risk of reducing motivation for active job seeking."
+      ],
+      "openingStrategy": "Introduce UBI as a proposed safety net against automation-induced job displacement.",
+      "conclusionStrategy": "Propose targeted conditional cash transfers as a more sustainable economic policy."
+    },
+    {
+      "id": "gd_10",
+      "topic": "Startup Culture vs Corporate Stability: What Should Fresh Graduates Choose?",
+      "category": "Career",
+      "forPoints": [
+        "Startups offer rapid learning, diverse responsibilities, and high ownership opportunities.",
+        "Corporates provide structured training, stability, clear work-life balance, and brand value."
+      ],
+      "againstPoints": [
+        "Startups carry higher job security risks and demanding long working hours.",
+        "Corporates can have slower career progression and bureaucratic processes."
+      ],
+      "openingStrategy": "Emphasize that the choice depends on individual risk appetite, learning goals, and career stage.",
+      "conclusionStrategy": "Summarize that starting in a startup builds versatility while corporate experience builds process discipline."
+    },
+    {
+      "id": "gd_11",
+      "topic": "Gig Economy & Freelancing: Independence vs Job Insecurity",
+      "category": "Work & Economy",
+      "forPoints": [
+        "Offers schedule flexibility, autonomous project choice, and global client reach.",
+        "Enables individuals to monetize specialized niche skills directly."
+      ],
+      "againstPoints": [
+        "Lacks fixed monthly salary, paid leave, health insurance, and retirement benefits.",
+        "Irregular workload leads to income instability during market downturns."
+      ],
+      "openingStrategy": "Begin by observing that gig work is redefining traditional employment contracts worldwide.",
+      "conclusionStrategy": "Advocate for portable social security benefits and legal protections tailored for freelancers."
+    },
+    {
+      "id": "gd_12",
+      "topic": "5G & 6G Technology: Transforming Digital Connectivity",
+      "category": "Technology",
+      "forPoints": [
+        "Ultra-low latency unlocks autonomous vehicles, remote robotic surgeries, and smart cities.",
+        "Delivers gigabit speeds, boosting IoT infrastructure and cloud computing."
+      ],
+      "againstPoints": [
+        "High capital expenditure required for dense fiber networks and telecom towers.",
+        "Broadened cyberattack surface for critical national infrastructure."
+      ],
+      "openingStrategy": "Frame 5G/6G not merely as faster internet, but as the backbone of next-gen industrial automation.",
+      "conclusionStrategy": "Conclude that public-private investments and robust cybersecurity will maximize connectivity gains."
+    },
+    {
+      "id": "gd_13",
+      "topic": "Renewable Energy Transition: Solar & Wind vs Fossil Fuel Dependency",
+      "category": "Environment",
+      "forPoints": [
+        "Crucial for curbing global warming, greenhouse emissions, and ecological damage.",
+        "Decreasing cost of solar panels makes clean energy economically competitive."
+      ],
+      "againstPoints": [
+        "Intermittency of solar/wind requires expensive grid-scale battery storage.",
+        "Immediate shutdown of coal power risks regional energy shortages and job losses."
+      ],
+      "openingStrategy": "Highlight the urgent need to balance zero-emission goals with grid stability.",
+      "conclusionStrategy": "Propose a phased transition supported by nuclear and hybrid storage solutions."
+    },
+    {
+      "id": "gd_14",
+      "topic": "Central Bank Digital Currencies (CBDC): The Future of National Money?",
+      "category": "Finance",
+      "forPoints": [
+        "Reduces physical currency printing/handling costs and enables instant settlement.",
+        "Enhances central bank control over monetary policy and reduces money laundering."
+      ],
+      "againstPoints": [
+        "Potential government surveillance over private individual transactions.",
+        "Risk of commercial bank disintermediation during panic withdrawals."
+      ],
+      "openingStrategy": "Introduce CBDCs as sovereign digital money designed to modernize the financial system.",
+      "conclusionStrategy": "Advocate for privacy-preserving digital currency design with tiered transaction limits."
+    },
+    {
+      "id": "gd_15",
+      "topic": "Brain Drain: Should High-Skilled Professionals Stay or Move Abroad?",
+      "category": "Nation & Career",
+      "forPoints": [
+        "Moving abroad offers access to world-class research facilities, global exposure, and higher earnings.",
+        "Foreign remittances strengthen home country foreign exchange reserves."
+      ],
+      "againstPoints": [
+        "Deprives developing nations of top engineering, medical, and scientific talent.",
+        "Domestic taxpayers fund subsidized education whose primary economic output moves overseas."
+      ],
+      "openingStrategy": "Position brain drain as a symptom of global talent mobility versus domestic infrastructure gaps.",
+      "conclusionStrategy": "Conclude that creating competitive R&D hubs and favorable business policies turns brain drain into brain gain."
+    },
+    {
+      "id": "gd_16",
+      "topic": "Cyber Warfare & Ethical Hacking: National Security in Digital Frontier",
+      "category": "Security & Tech",
+      "forPoints": [
+        "Proactive ethical hacking fortifies defense grids against hostile nation-state attacks.",
+        "Secures financial, power, and healthcare networks from crippling ransomware."
+      ],
+      "againstPoints": [
+        "Offensive cyber capability escalation risks triggering undeclared global digital conflicts.",
+        "Lack of international cyber treaties governing digital warfare."
+      ],
+      "openingStrategy": "State that future global conflicts will be fought in cyberspace before touching physical battlefields.",
+      "conclusionStrategy": "Call for international digital peace treaties and mandatory national cybersecurity audits."
+    },
+    {
+      "id": "gd_17",
+      "topic": "Moonlighting: Professional Right to Secondary Jobs or Breach of Ethics?",
+      "category": "Corporate Ethics",
+      "forPoints": [
+        "Employees should have freedom to utilize off-duty hours for skill growth and extra income.",
+        "Fosters entrepreneurial spirit and technical versatility."
+      ],
+      "againstPoints": [
+        "Risks intellectual property leak, conflict of interest, and client confidentiality breaches.",
+        "Causes fatigue, lowering primary job performance and focus."
+      ],
+      "openingStrategy": "Define moonlighting as taking secondary gigs outside primary employment, a hot debate in tech.",
+      "conclusionStrategy": "Suggest transparent disclosure policies where non-competing side projects are permitted."
+    },
+    {
+      "id": "gd_18",
+      "topic": "Nuclear Energy: Clean Power Solution or Catastrophic Risk?",
+      "category": "Energy & Environment",
+      "forPoints": [
+        "Generates immense zero-carbon baseload electricity with minimal land footprint.",
+        "Modern Small Modular Reactors (SMRs) possess advanced automated safety systems."
+      ],
+      "againstPoints": [
+        "Long-term nuclear waste disposal remains hazardous for thousands of years.",
+        "High initial capital costs and catastrophe risks (e.g., Chernobyl, Fukushima)."
+      ],
+      "openingStrategy": "Introduce nuclear power as a high-density energy source essential for replacing fossil baseloads.",
+      "conclusionStrategy": "Recommend investing in Next-Gen SMRs alongside rigorous international oversight."
+    },
+    {
+      "id": "gd_19",
+      "topic": "E-Commerce vs Local Brick-and-Mortar Retailers",
+      "category": "Business & Commerce",
+      "forPoints": [
+        "E-commerce offers door-step convenience, endless product variety, and competitive price discounts.",
+        "Drives logistics, packaging, and digital warehouse employment."
+      ],
+      "againstPoints": [
+        "Threatens traditional small family-owned retail shops and local market economies.",
+        "Excessive packaging generates plastic waste."
+      ],
+      "openingStrategy": "Acknowledge that online retail has disrupted shopping convenience while challenging local storefronts.",
+      "conclusionStrategy": "Advocate for omnichannel hybrid retail where local shops leverage digital delivery platforms."
+    },
+    {
+      "id": "gd_20",
+      "topic": "Space Exploration: Scientific Milestone or Misallocation of Resources?",
+      "category": "Science & Society",
+      "forPoints": [
+        "Spurs technological spin-offs (GPS, satellite communications, weather forecasting, advanced materials).",
+        "Ensures long-term human species survival through planetary exploration."
+      ],
+      "againstPoints": [
+        "Billion-dollar space budgets could address immediate Earth problems like hunger and disease.",
+        "Orbital space debris threatens active satellite networks."
+      ],
+      "openingStrategy": "Balance humanity's innate drive for exploration against immediate socioeconomic challenges on Earth.",
+      "conclusionStrategy": "Conclude that satellite technology directly improves life on Earth, making space research a worthwhile investment."
+    }
+  ]
+}
